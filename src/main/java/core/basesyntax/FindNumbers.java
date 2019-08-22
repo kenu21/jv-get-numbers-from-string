@@ -16,15 +16,12 @@ public class FindNumbers {
      */
     public int[] getAllNumbers(String text) {
         String strWithoutLetters = text.replaceAll("[^-?0-9]+", " ").replaceAll(" - ", " ");
-        String[] arStr = strWithoutLetters.trim().split(" ");
+        String[] arrayStr = strWithoutLetters.trim().split(" ");
 
-        int[] result = new int[arStr.length];
-
-        Scanner sc = new Scanner(strWithoutLetters);
-        for (int i = 0; sc.hasNextInt(); i++) {
-            result[i] = sc.nextInt() * 2;
+        int[] result = new int[arrayStr.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = Integer.parseInt(arrayStr[i]) * 2;
         }
-
         return result;
     }
 }
